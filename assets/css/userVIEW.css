@@ -1,0 +1,310 @@
+.card {
+    transition: transform 0.2s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    padding: 0.5rem;
+    background: #f8f9fa;
+    height: 150px; /* Reduce image container height */
+    object-fit: contain;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+    gap: 0.5rem; /* Reduce space between elements */
+}
+
+.card-title, .card-text {
+    margin-bottom: 0.25rem;
+}
+
+.card-text {
+    flex-grow: 1;
+}
+
+.card-text.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.card-body .mt-auto {
+    margin-top: auto;
+}
+
+.specs-details, .price-mobile {
+    text-align: left; /* Align price to left */
+    margin-top: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #343a40;
+    color: white;
+    padding: 20px;
+    position: fixed;  /* Make sidebar fixed */
+    top: 0;          /* Align to top */
+    left: 0;         /* Align to left */
+    height: 100vh;   /* Full viewport height */
+    overflow-y: auto; /* Allow scrolling if content is too long */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+    }
+    
+    .card {
+        height: auto;
+        margin-bottom: 0.5rem;
+        padding: 0;
+    }
+    
+    .card-title {
+        font-size: 0.85rem;
+        line-height: 1.2;
+        margin-bottom: 0.35rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+    
+    .card-text {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin-bottom: 0.35rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    
+    .action-buttons button {
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .action-buttons button i {
+        margin: 0;
+    }
+    
+    .action-buttons button span {
+        display: none;
+    }
+    
+    .price-mobile {
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-align: left;
+        margin: 0.25rem 0;
+    }
+
+    .btn {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .card-body {
+        padding: 0.5rem !important;
+        gap: 0.25rem;
+    }
+
+    .card-img-top {
+        height: 120px !important; /* Force override desktop height */
+        padding: 0.25rem;
+        margin: 0.25rem;
+        object-fit: contain;
+    }
+
+    .mobile-content {
+        margin-bottom: 1px;
+    }
+
+    .card-body {
+        padding-top: 1px !important; /* Reduce top padding */
+    }
+    
+    .card-title {
+        margin-top: 0; /* Remove top margin from title */
+    }
+    
+    /* Container spacing adjustments */
+    .card > * + * {
+        margin-top: 0; /* Remove default spacing between card elements */
+    }
+
+    .details-container {
+        padding: 0;
+    }
+
+    .action-buttons {
+        margin-top: auto;
+    }
+
+    .btn-primary {
+        font-size: 0.1rem; /* Adjust the font size as needed */
+    }
+
+    .d-flex {
+        flex-direction: row !important; /* Ensure horizontal alignment */
+        justify-content: space-between; /* Distribute space evenly */
+        width: 100%; /* Ensure full width */
+    }
+
+    .search-bar {
+        flex: 1; /* Allow the search bar to take available space */
+        margin-right: 10px; /* Add some space between the search bar and the button */
+    }
+
+    .btn-primary {
+        flex-shrink: 0; /* Prevent the button from shrinking */
+        font-size: 0.8rem; /* Adjust the font size as needed */
+    }
+}
+
+.sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.sidebar-backdrop.show {
+    display: block;
+}
+
+#sidebar-toggle {
+    z-index: 1001;
+    position: relative;
+}
+
+.main-content {
+    margin-left: 250px; /* Add margin equal to sidebar width */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-link {
+    color: rgba(255,255,255,.8);
+    padding: 8px 16px;
+    transition: all 0.3s;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: white;
+    background: rgba(255,255,255,.1);
+    text-decoration: none;
+}
+
+.nav-link i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.text-danger.text-decoration-line-through {
+    color: red !important;
+    text-decoration: line-through !important;
+    font-style: italic;
+}
+
+.search-filter-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#searchInput, #priceFilter {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus, #priceFilter:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem;
+}
+
+.form-control, .form-select {
+    border: 1px solid #dee2e6;
+}
+
+/* Custom width for the search bar */
+.search-bar {
+    max-width: 250px; /* Adjust the width as needed */
+}
+
+/* Custom width for the price filter select element */
+.filter-small-width {
+    min-width: 2px; /* Adjust as needed */
+}

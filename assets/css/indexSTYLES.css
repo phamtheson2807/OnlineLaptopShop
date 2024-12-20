@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background: #1a1a1a;
+    background: linear-gradient(45deg, #343a40, #1a1a1a);
+    min-height: 100vh;
+}
+
+header {
+    background-color: #3f4144;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.login-button {
+    color: #ffffff;
+    background-color: #007BFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.content {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.6; 
+    color: rgb(223, 223, 223);
+    border-radius: 10px;
+    
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.laptop-shape {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    opacity: 0.3;
+    filter: brightness(150%);
+}
+
+.first-shape {
+    right: 120px;
+    bottom: 65px;
+    width: 100px;
+    transform: rotate(-15deg);
+    filter: hue-rotate(120deg) brightness(150%);
+}
+
+.second-shape {
+    right: 20px;
+    bottom: 60px;
+    width: 100px;
+    transform: rotate(-15deg);
+    filter: hue-rotate(120deg) brightness(150%);
+}
+
+.about {
+    padding: 10px;
+    line-height: 17px;
+}
