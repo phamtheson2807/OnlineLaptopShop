@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 16, 2024 at 04:14 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 20, 2024 lúc 10:53 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `onlinelaptopshop`
+-- Cơ sở dữ liệu: `onlinelaptopshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `allorder`
+-- Cấu trúc bảng cho bảng `allorder`
 --
 
 CREATE TABLE `allorder` (
@@ -37,7 +37,7 @@ CREATE TABLE `allorder` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `allorder`
+-- Đang đổ dữ liệu cho bảng `allorder`
 --
 
 INSERT INTO `allorder` (`all_order_id`, `user_id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
@@ -62,7 +62,7 @@ INSERT INTO `allorder` (`all_order_id`, `user_id`, `order_id`, `product_id`, `qu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -73,7 +73,7 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cart`
+-- Đang đổ dữ liệu cho bảng `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `quantity`) VALUES
@@ -90,7 +90,7 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `quantity`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Cấu trúc bảng cho bảng `messages`
 --
 
 CREATE TABLE `messages` (
@@ -104,7 +104,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `messages`
+-- Đang đổ dữ liệu cho bảng `messages`
 --
 
 INSERT INTO `messages` (`message_id`, `sender_id`, `receiver_id`, `message_text`, `timestamp`, `attachment_link`, `is_read`) VALUES
@@ -221,7 +221,7 @@ INSERT INTO `messages` (`message_id`, `sender_id`, `receiver_id`, `message_text`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
 CREATE TABLE `orders` (
@@ -237,7 +237,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `orders`
+-- Đang đổ dữ liệu cho bảng `orders`
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `order_date`, `qty`, `total_amount`, `carrier`, `status`, `payment_option`) VALUES
@@ -253,7 +253,7 @@ INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `order_date`, `qty`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -268,7 +268,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`product_id`, `name`, `description`, `cpu`, `gpu`, `price`, `stock`, `image_url`) VALUES
@@ -282,7 +282,7 @@ INSERT INTO `products` (`product_id`, `name`, `description`, `cpu`, `gpu`, `pric
 -- --------------------------------------------------------
 
 --
--- Table structure for table `returns`
+-- Cấu trúc bảng cho bảng `returns`
 --
 
 CREATE TABLE `returns` (
@@ -297,7 +297,7 @@ CREATE TABLE `returns` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `returns`
+-- Đang đổ dữ liệu cho bảng `returns`
 --
 
 INSERT INTO `returns` (`return_id`, `order_id`, `user_id`, `reason`, `image_path`, `status`, `created_at`, `updated_at`) VALUES
@@ -308,7 +308,7 @@ INSERT INTO `returns` (`return_id`, `order_id`, `user_id`, `reason`, `image_path
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -326,23 +326,19 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `first_name`, `last_name`, `phone_number`, `location`, `email`, `status`, `otp`, `is_admin`) VALUES
-(1, 'harveycasane', '$2y$10$cASgtynyWnGFhMsjyWjBOu8dlwFI7/YI6I1/LURlOahDwLh7aF.Me', 'Harvey', 'inchik', 944988781, 'Lilia Avenue Cogon Combado, Ormoc City, Leyte, Philippines', 'harveycasane1@gmail.com', 'verified', 0, 0),
-(2, 'Admin', '$2y$10$2jNmAcm33sCnjKchuy9RbeWs7lT4PWHuL308oBYptaJJDeNw0DdOy', 'Mr. ', 'Admin', 944988781, 'Cogon rako boss', 'harvey.casane@evsu.edu.ph', 'verified', 996861, 1),
-(3, 'DomenickMahusay', '$2y$10$3UZ7Py.XvG10CazSB0Qh6.GQ9xUbXENrBK3JMReBUIyamRafYx6fG', 'Domenick', 'bayot', 987654, 'Cebu. PH', 'harveycasane2@gmail.com', 'verified', 808640, 0),
-(6, 'Christian', '$2y$10$1lsHd0Je9X3ILMAqEr5Jd.WBZtWzpY5XEktqNZ1RcwGm9RYQeZNhu', 'Christian', 'Dacera', 987654323, 'Lilia Avenue Cogon Combado, Ormoc City, Leyte, Philippines', 'harveycasane3@gmail.com', 'verified', 341198, 0),
-(13, 'test edited', '$2y$10$e9AM.9y6HIuDG8RK3et.1OvCbQj9n7TDwBQ9TdRRwS/Y6EJJaKcMu', 'Ate ', 'Jamjam', 98668, 'Osmeña Extension Alegria, Ormoc City, Leyte, Philippines', 'jamabds48@gmail.com', 'verified', 823601, 0),
-(14, 'Harvey', '$2y$10$EGULOd6HvVihgaBM6dLRTuIsY6hMQHPMCGmb.5nwbGr0Drn1bNIqO', 'Harvey', 'Casane', 944988781, 'Mongala, Democratic Republic of the Congo', 'harveycasane5@gmail.com', 'verified', 667766, 0);
+(2, 'Admin', 'admin', 'Mr. ', 'Admin', 944988781, 'Cogon rako boss', 'harvey.casane@evsu.edu.ph', 'verified', 996861, 1),
+(3, 'user', '$2y$10$3UZ7Py.XvG10CazSB0Qh6.GQ9xUbXENrBK3JMReBUIyamRafYx6fG', 'Thế Sơn', 'Phạm', 987654, 'Thanh hóa', 'son@gmail.com', 'verified', 808640, 0);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `allorder`
+-- Chỉ mục cho bảng `allorder`
 --
 ALTER TABLE `allorder`
   ADD PRIMARY KEY (`all_order_id`),
@@ -351,7 +347,7 @@ ALTER TABLE `allorder`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`),
@@ -359,7 +355,7 @@ ALTER TABLE `cart`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `messages`
+-- Chỉ mục cho bảng `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`message_id`),
@@ -367,7 +363,7 @@ ALTER TABLE `messages`
   ADD KEY `receiver_id` (`receiver_id`);
 
 --
--- Indexes for table `orders`
+-- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_id`),
@@ -375,13 +371,13 @@ ALTER TABLE `orders`
   ADD KEY `product_id_fk` (`product_id`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `returns`
+-- Chỉ mục cho bảng `returns`
 --
 ALTER TABLE `returns`
   ADD PRIMARY KEY (`return_id`),
@@ -389,7 +385,7 @@ ALTER TABLE `returns`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
@@ -397,89 +393,50 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `allorder`
+-- AUTO_INCREMENT cho bảng `allorder`
 --
 ALTER TABLE `allorder`
   MODIFY `all_order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT cho bảng `messages`
 --
 ALTER TABLE `messages`
   MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1509;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `returns`
+-- AUTO_INCREMENT cho bảng `returns`
 --
 ALTER TABLE `returns`
   MODIFY `return_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `allorder`
---
-ALTER TABLE `allorder`
-  ADD CONSTRAINT `allorder_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
-  ADD CONSTRAINT `allorder_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`),
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `cart`
---
-ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
-
---
--- Constraints for table `messages`
---
-ALTER TABLE `messages`
-  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`sender_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `messages_ibfk_2` FOREIGN KEY (`receiver_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`);
-
---
--- Constraints for table `returns`
---
-ALTER TABLE `returns`
-  ADD CONSTRAINT `returns_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
-  ADD CONSTRAINT `returns_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
